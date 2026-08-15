@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Editor User',
-                'email' => 'editor@example.com',
+                'email' => 'hacker@example.com',
                 'password' => 'password',
                 'is_admin' => false,
                 'avatar' => 'https://ui-avatars.com/api/?name=Editor+User&background=2ECC71&color=fff',
@@ -53,4 +53,4 @@ class UserSeeder extends Seeder
         User::factory(5)->create();
         User::factory(2)->admin()->create();
     }
-} 
+}
