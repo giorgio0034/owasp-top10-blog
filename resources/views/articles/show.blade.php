@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="card-body bg-white p-4">
-            @if(auth()->user()->isAdmin() || auth()->user()->id == $article->user_id)
+            @if(auth()->check() && (auth()->user()->isAdmin() || auth()->id() == $article->user_id))
             <div class="d-flex mb-3 gap-2">
               <a href="{{route('articles.edit',$article->id)}}" class="btn btn-warning rounded-pill px-4 fw-semibold"><i class="bi bi-pencil me-1"></i> Edit</a>
                 <form action="{{ route('articles.destroy', $article->id) }}" method="post">
