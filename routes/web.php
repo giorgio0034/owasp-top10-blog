@@ -24,7 +24,7 @@ Route::get('/articles/search', [ArticleController::class, 'search'])->name('arti
 // SECURE: throttle:5,1
 // Route::get('/articles/search', [ArticleController::class, 'search'])->middleware('throttle:5,1')->name('articles.search');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth-sanctum'])->group(function () {
 
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
